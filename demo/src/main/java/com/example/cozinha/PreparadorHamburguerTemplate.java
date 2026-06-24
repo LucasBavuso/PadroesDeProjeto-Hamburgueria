@@ -1,6 +1,7 @@
 package com.example.cozinha;
 
 public abstract class PreparadorHamburguerTemplate {
+    
     public final void prepararComboFinal() {
         tostarPao();
         grelharProteina();
@@ -8,9 +9,13 @@ public abstract class PreparadorHamburguerTemplate {
         embalar();
     }
 
-    private void tostarPao() { System.out.println("[TEMPLATE] Tostando pão na chapa com manteiga"); }
-    private void embalar() { System.out.println("[TEMPLATE] Embalando em papel térmico personalizado"); }
+    private void tostarPao() {
+    }
+
+    private void embalar() {
+    }
 
     protected abstract void grelharProteina();
+
     protected abstract void adicionarMolhosEspeciais();
 }

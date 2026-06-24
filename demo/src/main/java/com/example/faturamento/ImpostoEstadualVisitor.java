@@ -1,5 +1,14 @@
 package com.example.faturamento;
 
 public class ImpostoEstadualVisitor implements ContabilidadeVisitor {
-    @Override public void visitarPrato(PratoComida p) { System.out.println("[VISITOR] Calculado ICMS de 18% sobre o prato: R$ " + (p.getPreco() * 0.18)); }
+    private double ultimoCalculoIcms = 0.0;
+
+    @Override
+    public void visitarPrato(PratoComida p) {
+        this.ultimoCalculoIcms = p.getPreco() * 0.18;
+    }
+
+    public double getUltimoCalculoIcms() {
+        return ultimoCalculoIcms;
+    }
 }

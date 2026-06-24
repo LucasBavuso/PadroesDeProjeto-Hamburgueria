@@ -1,6 +1,17 @@
 package com.example.cozinha;
 
 public class CozinhaReceiver {
-    public void producirBurger() { System.out.println("[RECEIVER] Cozinha começou a chapear o hambúrguer!"); }
-    public void descartarBurger() { System.out.println("[RECEIVER] Produção cancelada. Insumos limpos."); }
+    private String ultimoStatus = "Ocioso";
+
+    public void producirBurger() {
+        this.ultimoStatus = "Chapeando";
+    }
+
+    public void descartarBurger() {
+        this.ultimoStatus = "Cancelado";
+    }
+
+    public String getUltimoStatus() {
+        return ultimoStatus;
+    }
 }

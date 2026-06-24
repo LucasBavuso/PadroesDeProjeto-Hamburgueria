@@ -13,7 +13,11 @@ public class ProxyServicoEstoque implements ServicoEstoque {
         if ("GERENTE".equalsIgnoreCase(cargoUsuario)) {
             servicoReal.alterarEstoque(qtd);
         } else {
-            System.out.println("[PROXY - ACESSO NEGADO] Apenas Gerentes podem alterar estoque!");
+            throw new SecurityException("[PROXY - ACESSO NEGADO] Apenas Gerentes podem alterar estoque!");
         }
+    }
+
+    public RealServicoEstoque getServicoReal() {
+        return servicoReal;
     }
 }

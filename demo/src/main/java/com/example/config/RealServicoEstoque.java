@@ -1,7 +1,13 @@
 package com.example.config;
 
 public class RealServicoEstoque implements ServicoEstoque {
-    @Override public void alterarEstoque(int qtd) { 
-        System.out.println("Estoque atualizado no Banco de Dados para: " + qtd); 
+    private int estoqueAtual = 0;
+
+    @Override 
+    public void alterarEstoque(int qtd) { 
+        this.estoqueAtual = qtd;
+    }
+    public int getEstoqueAtual() {
+        return estoqueAtual;
     }
 }
